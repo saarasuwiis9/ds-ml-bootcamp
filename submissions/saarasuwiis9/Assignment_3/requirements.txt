@@ -1,0 +1,3 @@
+pandas==<version>
+numpy==<version>
+scikit-learn==<version>
