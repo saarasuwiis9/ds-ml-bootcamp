@@ -44,7 +44,7 @@ Example in simple terms:
 | Input Data + Rules → Output.                                       | Input Data + Output Labels → Learned Rules (Model).                                     |
 | Example: "If a message contains the word 'lottery', mark as spam." | Example: Show the system thousands of emails labeled spam/not spam, it learns patterns. |
 
-![Traditional Programming vs Machine Learning](../images/lesson-one/ml.png)
+![Traditional Programming vs Machine Learning](../images/ml.png)
 
 ---
 
@@ -59,17 +59,14 @@ Example in simple terms:
 ### 5. Real-World Examples of Machine Learning
 
 1. **Spam Filters**
-
    - Gmail uses ML to automatically detect unwanted emails.
    - Learns from billions of messages (words, links, patterns).
 
 2. **Netflix & YouTube Recommendations**
-
    - Suggests movies/videos based on your viewing history.
    - Compares your habits with millions of other users.
 
 3. **Self-Driving Cars**
-
    - ML allows cars to detect objects, pedestrians, and traffic lights.
    - Cars “learn” from millions of driving hours and sensor data.
 
@@ -87,7 +84,7 @@ Example:
 - Model: Learns what makes a cat vs. dog (ears, tails, shapes).
 - Prediction: When shown a new picture, it guesses "This is a cat."
 
-![Learning from Data - Cat vs Dog](../images/lesson-one/cats-dogs.png)
+![Learning from Data - Cat vs Dog](../images/cats-dogs.png)
 
 ---
 
@@ -136,16 +133,14 @@ Now that we know what Machine Learning is, let’s explore its main **types**.
 **Key Tasks in Supervised Learning:**
 
 1. **Regression** → Predicting _numbers_ (continuous values).
-
    - Example: Predicting house prices based on size, location, and rooms.
    - Input: House features → Output: Price in dollars.
 
 2. **Classification** → Predicting _categories_ (discrete classes).
-
    - Example: Spam filter.
    - Input: Email text → Output: “Spam” or “Not Spam.”
 
-![Machine Learning Overview](../images/lesson-one/image-1.png)
+![Machine Learning Overview](../images/image-1.png)
 
 ---
 
@@ -159,16 +154,14 @@ Now that we know what Machine Learning is, let’s explore its main **types**.
 **Key Tasks in Unsupervised Learning:**
 
 1. **Clustering** → Grouping similar items together.
-
    - Example: Customer segmentation in marketing (grouping customers by behavior: frequent buyers, occasional buyers, etc.).
    - No “teacher” tells the algorithm which customer belongs where.
 
 2. **Dimensionality Reduction** → Simplifying complex data.
-
    - Example: Compressing high-dimensional images into fewer features without losing important information.
    - Used in visualization, noise reduction, and speeding up algorithms.
 
-![Dimensionality Reduction Visualization](../images/lesson-one/image-2.png)
+![Dimensionality Reduction Visualization](../images/image-2.png)
 
 ---
 
@@ -182,11 +175,11 @@ Now that we know what Machine Learning is, let’s explore its main **types**.
 ---
 
 Title: _Supervised Learning – Regression_
-![Supervised Learning – Regression](../images/lesson-one/image-3.png)
+![Supervised Learning – Regression](../images/image-3.png)
 Title: _Supervised Learning – Classification_
-![Supervised Learning – Classification](../images/lesson-one/image-4.png)
+![Supervised Learning – Classification](../images/image-4.png)
 Title: _Unsupervised Learning – Clustering_
-![Unsupervised Learning – Clustering](../images/lesson-one/image-5.png)
+![Unsupervised Learning – Clustering](../images/image-5.png)
 
 ---
 
@@ -250,7 +243,6 @@ If you skip one, your model may fail.
 
 - ML needs data — the more, the better (but quality matters too).
 - Sources:
-
   - Databases
   - Sensors (IoT)
   - Public datasets (Kaggle, UCI ML Repo)
@@ -276,7 +268,6 @@ Example: If house sizes are in m² and ft², unify them into one unit.
 #### **Step 4: Splitting the Dataset**
 
 - Split data into:
-
   - **Training set** → used to teach the model.
   - **Test set** → used to check if the model generalizes well.
 
@@ -296,7 +287,6 @@ Example: If house sizes are in m² and ft², unify them into one unit.
 
 - Test the model on unseen test data.
 - Use metrics like:
-
   - Accuracy (for classification).
   - Mean Squared Error (for regression).
   - Precision/Recall (for imbalance problems like fraud detection).
@@ -321,7 +311,7 @@ Example: If the spam filter says 95% of emails are classified correctly → accu
 
 ---
 
-![Machine Learning Workflow](../images/lesson-one/image-6.png)
+![Machine Learning Workflow](../images/image-6.png)
 
 ---
 
@@ -366,7 +356,7 @@ There are hundreds, but we’ll focus on the **core family** of algorithms you m
 
 - **Goal:** Predict continuous numbers.
 - **How it works:** Fits a straight line (or curve) through data points.
-- **Example:** Predict house prices based on size.
+- **Example:** Predicting house prices based on size.
 
 **Tiny Example:**
 
@@ -402,7 +392,6 @@ print(model.predict([[5]]))  # Predict score for 5 hours
 - **Goal:** Predict categories or numbers by asking a series of “questions.”
 - **How it works:** Splits data into branches like a flowchart.
 - **Example:**
-
   - Question 1: Is income > \$50k?
   - Question 2: Is age < 30?
   - Then → Predict “Buy product” or “Not buy.”
@@ -455,7 +444,6 @@ print(model.predict([[5]]))  # Predict score for 5 hours
 - **Q-Learning**: Agent learns best actions using a reward system.
 - **Deep Q-Networks (DQN)**: Uses deep learning + reinforcement learning.
 - **Examples:**
-
   - Robots learning to walk.
   - AlphaGo beating human champions in Go.
 
@@ -491,7 +479,6 @@ One of the **biggest challenges** in Machine Learning is making models that gene
 
 - **Definition:** Model is too simple, cannot capture the underlying structure of the data.
 - **Cause:**
-
   - Using too few features.
   - Using a very basic algorithm (e.g., straight line for nonlinear data).
 
@@ -506,12 +493,10 @@ Trying to fit a straight line to curved data → it will miss important trends.
 
 - **Definition:** Model is too complex, memorizes the training data instead of learning general rules.
 - **Cause:**
-
   - Too many features.
   - Using a very flexible model without enough data.
 
 - **Result:**
-
   - Training accuracy is very high (almost perfect).
   - Test accuracy is low (fails on unseen data).
 
@@ -520,8 +505,7 @@ Fitting a very wiggly curve through every training point, but it performs poorly
 
 ---
 
-.
-![Good Fit Example](../images/lesson-one/image-7.png)
+![Good Fit Example](../images/image-7.png)
 
 ---
 
@@ -529,7 +513,6 @@ Fitting a very wiggly curve through every training point, but it performs poorly
 
 - Goal in ML: **Find the sweet spot** → not too simple, not too complex.
 - This is called the **Bias-Variance Tradeoff**:
-
   - Underfitting → High bias (too many wrong assumptions).
   - Overfitting → High variance (model is too sensitive to training data).
 
