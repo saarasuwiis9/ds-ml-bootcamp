@@ -44,3 +44,6 @@ This assignment is a research-based introduction to machine learning. The purpos
 2. Géron, A. (2019). *Hands-On Machine Learning*. O’Reilly.
 3. UCI Machine Learning Repository – Breast Cancer Dataset.
 4. Bishop, C. (2006). *Pattern Recognition and Machine Learning*. Springer.
+
+
+Lests goo to the Assignment 2😁

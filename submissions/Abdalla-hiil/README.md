@@ -9,10 +9,10 @@ Welcome to my assignment repository for the Data Science / Machine Learning Boot
 
 ## Folder Structure
 submissions/
-└── Abdalla-Hiil/
-├── assignment_1/
-├── assignment_2/
-└── ...
+└── Abdalla-hiil/
+├── Assignment_1/
+├── Assignment_2/
+└── ....
 
 
 Each assignment folder includes:
