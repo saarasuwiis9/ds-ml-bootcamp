@@ -87,7 +87,7 @@ Overfitting occurs when a model captures idiosyncratic noise in the training dat
 | Situation                             | Probable cause              | Recommended remedy                      |
 | :------------------------------------ | :-------------------------- | :-------------------------------------- |
 | Low train & low val performance       | Underfitting (high bias)    | Increase model complexity, add features |
-| Low train & high val performance      | Overfitting (high variance) | Regularize, add data, reduce complexity |
+| High train & low val performance      | Overfitting (high variance) | Regularize, add data, reduce complexity |
 | Train loss improving, val loss rising | Overfitting during training | Early stopping, dropout                 |
 
 ---
