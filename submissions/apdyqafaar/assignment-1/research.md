@@ -3,6 +3,8 @@
 **Machine Learning (ML)** is a branch of artificial intelligence that enables computers to learn patterns from data and make decisions or predictions without being explicitly programmed.
 
 **Real-life example:**  
+Recommendation engines 
+like Facebook, user will be recommended what he likes watch search and even how match time the user watched the post video or event text   
 Email spam filtering.  
 Email providers like Gmail use machine learning models trained on thousands of emails labeled as *spam* or *not spam*. Over time, the system learns patterns (keywords, sender behavior, links) and automatically classifies new incoming emails correctly.
 
@@ -18,11 +20,10 @@ Email providers like Gmail use machine learning models trained on thousands of e
 | Human involvement | Requires labeled datasets | No labels required |
 
 **Supervised Learning Example:**  
-House price prediction using labeled data where inputs (size, location, rooms) are paired with known house prices.
+Car price prediction using labeled data where inputs (size, engine, color) are paired with known car prices.
 
 **Unsupervised Learning Example:**  
-Customer segmentation where customer data is grouped into clusters based on purchasing behavior without predefined labels.
-
+Recommendation engine like Tiktok data is grouped into clusters based on what you like and what what your friends like and watch 
 ---
 
 ## 3. What causes Overfitting? How can it be prevented?
