@@ -13,7 +13,7 @@ Welcome! This repository contains my assignments for the **Data Science & Machin
 
 | Module | Assignment | Status | Grade | Topic |
 | :--- | :--- | :--- | :--- | :--- |
-| **Lesson 1** | [Intro to ML](./assignment-1/assignment-1.md) | Submitted | -- | *Supervised Learning, Overfitting, Workflow* |
+| **Lesson 1** | [Intro to ML](https://github.com/sirrryasir/ds-ml-bootcamp/blob/main/assignment/lesson-one.md) | Submitted | -- | *Supervised Learning, Overfitting, Workflow* |
 
 ---
 
