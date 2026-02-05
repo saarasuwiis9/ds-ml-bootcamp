@@ -34,6 +34,8 @@ Email spam filters use machine learning to automatically identify spam. Instead 
 | **Feedback** | Direct error measurement | No explicit feedback |
 | **Use Cases** | Classification, regression | Clustering, pattern discovery |
 
+![Supervised vs Unsupervised Learning Comparison](images/Supervised%20learning.avif)
+
 ---
 
 ## 3. What causes Overfitting? How can it be prevented?
