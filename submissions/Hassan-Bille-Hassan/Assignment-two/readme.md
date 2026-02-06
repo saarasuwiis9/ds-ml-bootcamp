@@ -2,4 +2,4 @@
 ## Data Foundations for Machine Learning
 
 **Student:** Hassan Bille Hassan  
-**Course:** Data Science
+**Course:** Machine Learning
