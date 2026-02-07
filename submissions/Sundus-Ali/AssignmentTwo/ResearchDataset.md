@@ -72,7 +72,9 @@ Label: Daily Energy Level
 Since the dataset was collected from real participants, several quality issues are present:
 
 *Missing Data*
+
 *1.* Another issue observed in the dataset is that the target variable (Daily Energy Level) is positioned between feature columns rather than being clearly separated. During preprocessing, the label column should be moved to the final position to improve dataset organization and model preparation.
+
 *2.*One column is completely empty and should be removed during preprocessing.
 
 *3*.Categorical Text Values:
