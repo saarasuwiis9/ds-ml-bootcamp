@@ -56,7 +56,7 @@ ScreenTime	SocialAppsUsed	PhoneCheckFreq	SleepTime	Age	AddictionLevel
 10.0	9	210	5.5	21	High
 
 
-⸻
+
 
 4. Data Quality Issues
 
@@ -72,7 +72,7 @@ Extremely high screen time values (over 12 hours) appear for some participants a
 
 These issues make the dataset suitable for cleaning, encoding, scaling, and feature engineering.
 
-⸻
+
 
 5. Use Case in Machine Learning
 
