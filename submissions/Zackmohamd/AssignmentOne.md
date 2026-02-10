@@ -11,6 +11,7 @@ According to Tom M. Mitchell (1997),
 Real-life Example:
 Email spam filtering is a common real-life application of Machine Learning. Email systems learn from labeled examples of spam and non-spam messages and automatically classify incoming emails based on learned patterns such as keywords, sender behavior, and message structure.
 
+
 Reference:
 Mitchell, T. M. (1997). Machine Learning. McGraw-Hill.
 https://www.cs.cmu.edu/~tom/mlbook.html
