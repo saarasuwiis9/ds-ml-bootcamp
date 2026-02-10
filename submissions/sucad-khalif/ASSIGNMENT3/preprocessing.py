@@ -34,16 +34,35 @@ low_duration , high_duration = iqr_fun(df["Wedding_Duration_Hours"])
 
 df["Wedding_Price"] = df["Wedding_Price"].clip (lower= low_price, upper = high_price)
 df["Wedding_Duration_Hours"] = df["Wedding_Duration_Hours"].clip (lower= low_duration, upper = high_duration)
+# One-Hot Encoding
+for col in ["Venue_Type", "Decoration_Level", "Catering_Type"]:
+    df[col] = df[col].str.strip().str.title()
 
-#One-Hot Encoding (3 columns)
-df_encoded = pd.get_dummies(
-    df,
-    columns=["Venue_Type", "Decoration_Level", "Catering_Type"],
-    drop_first=True
-)
+#  One-hot encoding manually with bool
+# Venue_Type
+df["Venue_Home"] = df["Venue_Type"] == "Home"
+df["Venue_Hotel"] = df["Venue_Type"] == "Hotel"
+df["Venue_Beach"] = df["Venue_Type"] == "Beach"
 
-print(df_encoded.head())
-print("Shape:", df_encoded.shape)
+# Decoration_Level
+df["Decoration_Low"] = df["Decoration_Level"] == "Low"
+df["Decoration_Medium"] = df["Decoration_Level"] == "Medium"
+df["Decoration_High"] = df["Decoration_Level"] == "High"
+
+# Catering_Type
+df["Catering_Basic"] = df["Catering_Type"] == "Basic"
+df["Catering_Standard"] = df["Catering_Type"] == "Standard"
+df["Catering_Premium"] = df["Catering_Type"] == "Premium"
+
+# Drop original text columns
+df.drop(columns=["Venue_Type", "Decoration_Level", "Catering_Type"], inplace=True)
+
+# Convert bools to int (optional, for ML models)
+bool_cols = df.select_dtypes(include="bool").columns
+df[bool_cols] = df[bool_cols].astype(int)
+
+print(df.head())
+print("Columns now:", df.columns.tolist())
 
 # Feature Engineering
 df["Price_per_Guest"] = df["Wedding_Price"] / df["Number_of_Guests"]
