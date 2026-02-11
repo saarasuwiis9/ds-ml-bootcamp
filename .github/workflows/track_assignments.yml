@@ -28,9 +28,11 @@ jobs:
       - name: Run tracker script
         run: python tracker.py
 
-      - name: Upload Report
+      - name: Upload Reports
         uses: actions/upload-artifact@v4
         with:
-          name: assignment-tracker-report
-          path: TRACKER.md
+          name: assignment-tracker-reports
+          path: |
+            TRACKER.md
+            TRACKER.csv
           retention-days: 7
