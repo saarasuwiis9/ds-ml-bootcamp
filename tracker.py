@@ -9,42 +9,40 @@ def track_assignments(base_dir):
 
     students = {}
     
-    # regex patterns for assignments (handles typos and common naming conventions)
-    a1_pattern = re.compile(r"assig[n]*ment[-_ ]*1|a1", re.IGNORECASE)
-    a2_pattern = re.compile(r"assig[n]*ment[-_ ]*2|a2", re.IGNORECASE)
-    a3_pattern = re.compile(r"assig[n]*ment[-_ ]*3|a3", re.IGNORECASE)
+    # regex patterns for assignments (handles typos, word numbers, and common naming conventions)
+    # Using \b for short forms a1, a2, a3 to avoid matching data1.csv etc.
+    a1_pattern = re.compile(r"(assig[n]*m[e]*nt|assig[n]*m[er]nt|asig[n]*ment)[-_ ]*(1|one)|\ba1\b", re.IGNORECASE)
+    a2_pattern = re.compile(r"(assig[n]*m[e]*nt|assig[n]*m[er]nt|asig[n]*ment)[-_ ]*(2|two)|\ba2\b", re.IGNORECASE)
+    a3_pattern = re.compile(r"(assig[n]*m[e]*nt|assig[n]*m[er]nt|asig[n]*ment)[-_ ]*(3|three)|\ba3\b", re.IGNORECASE)
 
-    # Walk through the submissions directory
+    # Folders that are definitely NOT students
+    exclude_folders = {"000.example", ".git", "assignment-1", "assignment-2", "assignment-3"}
+
     for item in os.listdir(submissions_dir):
         item_path = os.path.join(submissions_dir, item)
         
         if os.path.isdir(item_path):
-            # It's likely a student folder
             student_name = item
-            if student_name == "000.example" or student_name == ".git":
+            if student_name.lower() in exclude_folders:
                 continue
                 
             students[student_name] = {"A1": False, "A2": False, "A3": False}
             
-            # Check for assignment folders or files inside student folder
-            for sub_item in os.listdir(item_path):
-                if a1_pattern.search(sub_item):
-                    students[student_name]["A1"] = True
-                elif a2_pattern.search(sub_item):
-                    students[student_name]["A2"] = True
-                elif a3_pattern.search(sub_item):
-                    students[student_name]["A3"] = True
-        elif os.path.isfile(item_path):
-            # Check if an assignment file is directly in submissions (e.g. "Assignment 1.md")
-            # We skip READMEs and system files
-            if item.lower().startswith("readme") or item.startswith("."):
-                continue
-                
-            # If it's a file like "Assignment 1.md", we try to extract a name or just count it?
-            # Actually, the user asked for student tracker.
-            pass
+            # Recursive check (up to 3 levels deep) inside student folder
+            for root, dirs, files in os.walk(item_path):
+                depth = root[len(item_path):].count(os.sep)
+                if depth > 2:
+                    continue
+                    
+                all_items = dirs + files
+                for sub_item in all_items:
+                    if a1_pattern.search(sub_item):
+                        students[student_name]["A1"] = True
+                    if a2_pattern.search(sub_item):
+                        students[student_name]["A2"] = True
+                    if a3_pattern.search(sub_item):
+                        students[student_name]["A3"] = True
     
-    # Generate the report
     generate_report(base_dir, students)
 
 def generate_report(base_dir, students):
@@ -68,7 +66,6 @@ def generate_report(base_dir, students):
         f.write("| Student Name | A1 | A2 | A3 |\n")
         f.write("| --- | --- | --- | --- |\n")
         
-        # Sort students alphabetically
         for student in sorted(students.keys()):
             a1 = "✅" if students[student]["A1"] else "❌"
             a2 = "✅" if students[student]["A2"] else "❌"
@@ -76,6 +73,8 @@ def generate_report(base_dir, students):
             f.write(f"| {student} | {a1} | {a2} | {a3} |\n")
             
     print(f"Report generated successfully at {report_path}")
+    print(f"Total Students: {total_students}")
+    print(f"A1: {count_a1}, A2: {count_a2}, A3: {count_a3}")
 
 if __name__ == "__main__":
     current_dir = os.path.abspath(os.path.dirname(__file__))
